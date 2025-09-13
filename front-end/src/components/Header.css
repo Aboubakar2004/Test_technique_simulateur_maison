@@ -1,0 +1,31 @@
+.header-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profil-logo {
+  width: 35px;
+  height: auto;
+  color: black;
+}
+
+.user-groupe {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.signup-button {
+  background-color: black;
+  padding: 0 25px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: smaller;
+}
+
+.login-button {
+  text-decoration: none;
+  color: black;
+}
