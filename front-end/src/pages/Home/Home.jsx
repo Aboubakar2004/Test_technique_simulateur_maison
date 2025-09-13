@@ -1,17 +1,12 @@
 import React from "react";
 import "../Home/Home.css";
-import { Link } from "react-router-dom";
+import Header from "../../components/Header";
 
 function Home() {
   return (
     <div>
+      <Header />
       <h1 className="home-title">Ceci est la page d'acceuil</h1>
-      <Link to="/login">
-        <h2>Se connecter</h2>
-      </Link>
-      <Link to="/signup">
-        <h2>S'inscrire</h2>
-      </Link>
     </div>
   );
 }
