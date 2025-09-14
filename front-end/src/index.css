@@ -3,9 +3,10 @@
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  font-size: 90%;
+  font-size: small;
   margin: 0 50px;
   margin-top: 20px;
   font-weight: lighter;
-  background-color: #f6f8fa;
+
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }

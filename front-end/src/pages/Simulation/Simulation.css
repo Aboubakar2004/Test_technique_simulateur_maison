@@ -54,6 +54,7 @@
 .simulation-result.slide-in {
   transform: translateX(-2.1rem);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
 .simulation-input {
@@ -120,7 +121,7 @@
 }
 
 .back-button {
-  background-color: #6b7280;
+  background-color: #449dd1;
   color: white;
   border: none;
   padding: 10px 20px;

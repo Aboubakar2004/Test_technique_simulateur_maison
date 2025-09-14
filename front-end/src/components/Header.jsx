@@ -1,4 +1,3 @@
-import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import SimulioLogo from "../assets/images/EaC8l601.svg";
 import "../components/Header.css";
