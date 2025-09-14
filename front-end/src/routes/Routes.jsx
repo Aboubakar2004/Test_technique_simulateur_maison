@@ -3,6 +3,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import Profil from "../pages/Profile/Profile";
+import Simulation from "../pages/Simulation/Simulation";
 
 function AppRoutes() {
   return (
@@ -12,6 +13,7 @@ function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profil" element={<Profil />} />
+        <Route path="/simulation" element={<Simulation />} />
       </Routes>
     </div>
   );
