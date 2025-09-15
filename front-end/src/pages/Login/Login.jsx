@@ -5,7 +5,7 @@ function Login() {
   return (
     <div className="login-page-container">
       <div className="login-page-content">
-        <div className="connexion-title">
+        <div className="login-title">
           <h1>Connexion</h1>
         </div>
         <div className="email">
@@ -16,7 +16,7 @@ function Login() {
           Mots de passe
           <input type="password" className="password-input" />
         </div>
-        <button className="login-button">Se connecter</button>
+        <button className="login-page-button">Se connecter</button>
       </div>
     </div>
   );

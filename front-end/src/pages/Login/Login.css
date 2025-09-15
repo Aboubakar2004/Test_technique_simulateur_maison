@@ -39,20 +39,19 @@
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.1);
 }
 
-.login-button {
+.login-page-button {
   background-color: #449dd1;
-  height: 30px;
-  padding: 0 25px;
+  padding: 10px;
   border-radius: 5px;
   color: white;
   text-decoration: none;
-  font-size: smaller;
+
   border: none;
   cursor: pointer;
-  width: 325px;
+  width: 323px;
 }
 
-.connexion-title {
+.login-title {
   text-align: center;
 }
 
