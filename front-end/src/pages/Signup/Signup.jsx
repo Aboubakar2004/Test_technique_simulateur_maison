@@ -17,7 +17,7 @@ function SignUp() {
     setSubmitting(true);
     try {
       await signup({ email, password });
-      navigate("/loged-home");
+      navigate("/");
     } catch (err) {
       setError(err.message || "Échec de l'inscription");
     } finally {

@@ -17,7 +17,7 @@ function Login() {
     setSubmitting(true);
     try {
       await login({ email, password });
-      navigate("/loged-home");
+      navigate("/");
     } catch (err) {
       setError(err.message || "Échec de la connexion");
     } finally {

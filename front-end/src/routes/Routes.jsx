@@ -4,7 +4,7 @@ import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import Profil from "../pages/Profile/Profile";
 import Simulation from "../pages/Simulation/Simulation";
-import LogedHome from "../pages/LogedHome/LogedHome";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 function AppRoutes() {
   return (
@@ -14,8 +14,14 @@ function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profil" element={<Profil />} />
-        <Route path="/simulation" element={<Simulation />} />
-        <Route path="/loged-home" element={<LogedHome />} />
+        <Route
+          path="/simulation"
+          element={
+            <ProtectedRoute>
+              <Simulation />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </div>
   );
