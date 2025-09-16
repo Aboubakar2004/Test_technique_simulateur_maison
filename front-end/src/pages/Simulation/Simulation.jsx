@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "../Simulation/Simulation.css";
-import { useNavigate } from "react-router-dom";
 
 function Simulation() {
-  let navigate = useNavigate();
-  const routeChange = () => {
-    let path = `/simulation`;
-    navigate(path);
-  };
   const [isVisible, setIsVisible] = useState(false);
 
   return (
