@@ -83,14 +83,10 @@ function Home() {
           <p className="cta-subtitle">
             Obtenez votre simulation personnalisée en moins de 2 minutes
           </p>
-          <div className="cta-groupe-button">
-            <Link to={simulationTarget}>
-              <button className="cta-button">Simuler</button>
-            </Link>
-            <Link to="/header">
-              <button className="learn-more">En savoir plus</button>
-            </Link>
-          </div>
+
+          <Link to={simulationTarget}>
+            <button className="cta-button">Simuler</button>
+          </Link>
         </div>
       </section>
       <Footer />

@@ -1,0 +1,11 @@
+.unauthorized-container {
+  display: grid;
+  place-items: center;
+  height: 90vh;
+  text-align: center;
+  color: red;
+}
+
+.unauthorized-title {
+  font-size: 4rem;
+}

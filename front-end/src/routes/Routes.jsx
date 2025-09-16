@@ -5,14 +5,29 @@ import Signup from "../pages/Signup/Signup";
 import Profil from "../pages/Profile/Profile";
 import Simulation from "../pages/Simulation/Simulation";
 import ProtectedRoute from "../components/ProtectedRoute";
+import UnauthorizedRoute from "../components/UnauthorizedRoute";
 
 function AppRoutes() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/login"
+          element={
+            <UnauthorizedRoute>
+              <Login />
+            </UnauthorizedRoute>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <UnauthorizedRoute>
+              <Signup />
+            </UnauthorizedRoute>
+          }
+        />
         <Route path="/profil" element={<Profil />} />
         <Route
           path="/simulation"
