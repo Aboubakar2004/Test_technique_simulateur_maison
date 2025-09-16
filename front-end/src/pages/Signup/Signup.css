@@ -70,3 +70,46 @@
   gap: 10px;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .sign-up-page-content {
+    width: 350px;
+    padding: 40px;
+  }
+
+  .email-input,
+  .password-input {
+    width: 250px;
+  }
+
+  .sign-up-page-button {
+    width: 273px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-up-page-content {
+    width: 300px;
+    padding: 30px;
+    margin: 20px;
+  }
+
+  .email-input,
+  .password-input {
+    width: 200px;
+  }
+
+  .sign-up-page-button {
+    width: 223px;
+  }
+
+  .sign-up-title {
+    font-size: 1.5rem;
+  }
+
+  .have-account {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}

@@ -45,6 +45,13 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   position: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-content > div:last-child {
+  margin-top: 30px;
 }
 
 .feature {
@@ -54,34 +61,34 @@
 }
 
 .calculator-icon {
-  width: 150px;
-  height: 150px;
-  margin-left: 40px;
-  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
   color: white;
 }
 
 .crosshair-icon {
-  width: 150px;
-  height: 150px;
-  margin-left: 40px;
-  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
   color: white;
 }
 
 .money-icon {
-  width: 150px;
-  height: 150px;
-  margin-left: 40px;
-  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
   color: white;
 }
 
 .smartphone-icon {
-  width: 150px;
-  height: 150px;
-  margin-left: 40px;
-  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
   color: white;
 }
 
@@ -117,4 +124,87 @@
   color: black;
   font-weight: bold;
   border: none;
+}
+
+@media (max-width: 1200px) {
+  .feature {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .feature-content {
+    width: 200px;
+    height: 300px;
+  }
+
+  .feature-content > div:last-child {
+    margin-top: 20px;
+  }
+
+  .calculator-icon,
+  .crosshair-icon,
+  .money-icon,
+  .smartphone-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+  }
+
+  .feature {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-content {
+    width: 250px;
+    height: 300px;
+  }
+
+  .cta-hero {
+    margin: 5rem 2rem;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .hero-cta,
+  .cta-button {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .feature-content {
+    width: 200px;
+    height: 250px;
+    padding: 30px;
+  }
+
+  .calculator-icon,
+  .crosshair-icon,
+  .money-icon,
+  .smartphone-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    display: block;
+  }
 }

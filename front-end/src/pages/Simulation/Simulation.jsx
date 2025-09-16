@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Simulation/Simulation.css";
+import { simulationApi } from "../../api/client";
 
 function Simulation() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,6 +19,8 @@ function Simulation() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState(null);
+  const [saving, setSaving] = useState(false);
+  const [saveMessage, setSaveMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +28,7 @@ function Simulation() {
   };
 
   const handleSimulate = async () => {
-    if (isVisible) return; // Empêche de relancer tant que "Nouvelle simulation" n'est pas cliqué
+    if (isVisible) return;
     setLoading(true);
     setError("");
     try {
@@ -53,6 +56,32 @@ function Simulation() {
       setError(e.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSaveSimulation = async () => {
+    if (!result) {
+      setSaveMessage("Aucune simulation à sauvegarder");
+      return;
+    }
+
+    setSaving(true);
+    setSaveMessage("");
+    try {
+      await simulationApi.save({
+        borrowing_capacity: result.capacite_emprunt,
+        debt_ratio: result.taux_endettement,
+        total_project_cost: result.cout_projet,
+        total_credit_cost: result.cout_credit,
+        estimated_monthly_payment: result.mensualite,
+      });
+      setSaveMessage(
+        "Simulation sauvegardée avec succès, retrouve-la dans l'onglet mon espace !"
+      );
+    } catch (e) {
+      setSaveMessage("Erreur lors de la sauvegarde");
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -220,7 +249,24 @@ function Simulation() {
           >
             Nouvelle simulation
           </button>
-          <button className="save-button">Sauvegarder la simulation</button>
+          <button
+            className="save-button"
+            onClick={handleSaveSimulation}
+            disabled={saving}
+          >
+            {saving ? "Sauvegarde..." : "Sauvegarder la simulation"}
+          </button>
+          {saveMessage && (
+            <div
+              style={{
+                marginTop: "10px",
+                color: saveMessage.includes("succès") ? "green" : "red",
+                textAlign: "center",
+              }}
+            >
+              {saveMessage}
+            </div>
+          )}
         </div>
       </div>
     </div>

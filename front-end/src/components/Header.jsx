@@ -21,9 +21,9 @@ function Header() {
         <div className="user-groupe">
           {loading ? null : user ? (
             <div className="header-button-groupe">
-              <button className="my-space-button">
+              <Link to="/myspace" className="my-space-button">
                 <h3>Mon espace</h3>
-              </button>
+              </Link>
               <button className="logout-button" onClick={handleLogout}>
                 <h3>Se déconnecter</h3>
               </button>
