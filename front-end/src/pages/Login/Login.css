@@ -64,3 +64,40 @@
   display: grid;
   gap: 10px;
 }
+
+@media (max-width: 768px) {
+  .login-page-content {
+    width: 350px;
+    padding: 40px;
+  }
+
+  .email-input,
+  .password-input {
+    width: 250px;
+  }
+
+  .login-page-button {
+    width: 273px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page-content {
+    width: 300px;
+    padding: 30px;
+    margin: 20px;
+  }
+
+  .email-input,
+  .password-input {
+    width: 200px;
+  }
+
+  .login-page-button {
+    width: 223px;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+  }
+}

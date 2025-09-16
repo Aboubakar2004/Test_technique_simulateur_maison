@@ -1,14 +1,14 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 export function getStoredToken() {
-  return localStorage.getItem("auth_token");
+  return sessionStorage.getItem("auth_token");
 }
 
 export function setStoredToken(token) {
   if (token) {
-    localStorage.setItem("auth_token", token);
+    sessionStorage.setItem("auth_token", token);
   } else {
-    localStorage.removeItem("auth_token");
+    sessionStorage.removeItem("auth_token");
   }
 }
 
@@ -45,6 +45,13 @@ export const authApi = {
     apiRequest("/api/login", { method: "POST", body: payload }),
   me: () => apiRequest("/api/me"),
   logout: () => apiRequest("/api/logout", { method: "POST" }),
+};
+
+export const simulationApi = {
+  save: (payload) =>
+    apiRequest("/api/simulation/save", { method: "POST", body: payload }),
+  getHistory: () => apiRequest("/api/simulation/history"),
+  delete: (id) => apiRequest(`/api/simulation/${id}`, { method: "DELETE" }),
 };
 
 export default apiRequest;

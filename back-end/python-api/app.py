@@ -42,7 +42,7 @@ def calculer_mensualite(
     date_str = f"{mois}/01/{annee}"
     rng = pd.date_range(start=date_str, periods=n, freq="MS")
     rng.name = "Date"
-    df = pd.DataFrame(index=rng, columns=["Mensualité", "Capital Amorti", "Intérêts", "Capital restant dû"], dtype="float")
+    df = pd.DataFrame(index=rng, columns=["Mensualité", "Capital Amorti", "Intérêts", "Capital restant dû"], dtype="float64")
     df.reset_index(inplace=True)
     df.index += 1
     df.index.name = "Mois"
@@ -52,15 +52,15 @@ def calculer_mensualite(
     df["Intérêts"] = -1 * numpy_financial.ipmt(t2 / 12.0, df.index, n, capital)
     df = df.round(2)
 
-    df["Capital restant dû"] = 0
-    df.loc[1, "Capital restant dû"] = capital - df.loc[1, "Capital Amorti"]
+    df["Capital restant dû"] = 0.0
+    df.loc[1, "Capital restant dû"] = float(capital - df.loc[1, "Capital Amorti"])
     for period in range(2, len(df) + 1):
         previous_balance = df.loc[period - 1, "Capital restant dû"]
         principal_paid = df.loc[period, "Capital Amorti"]
         if previous_balance == 0:
             continue
         elif principal_paid <= previous_balance:
-            df.loc[period, "Capital restant dû"] = previous_balance - principal_paid
+            df.loc[period, "Capital restant dû"] = float(previous_balance - principal_paid)
 
     salaire_minimum = int((mensualite * 100.0) / 35.0)
 

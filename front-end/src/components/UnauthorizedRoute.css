@@ -9,3 +9,23 @@
 .unauthorized-title {
   font-size: 4rem;
 }
+
+@media (max-width: 768px) {
+  .unauthorized-title {
+    font-size: 3rem;
+  }
+
+  .unauthorized-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unauthorized-title {
+    font-size: 2.5rem;
+  }
+
+  .unauthorized-container {
+    padding: 15px;
+  }
+}

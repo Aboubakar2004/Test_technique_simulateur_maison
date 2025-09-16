@@ -1,0 +1,86 @@
+.result-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: grid;
+  gap: 10px;
+  font-size: 15px;
+  margin-top: 70px;
+}
+
+.simulation-delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+.result-style {
+  font-weight: bold;
+}
+
+.result-title {
+  font-weight: bold;
+  background-color: #d3d3d3;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+  .result-container {
+    margin: 10px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .result-container {
+    margin: 5px;
+    padding: 15px;
+    margin-top: 50px;
+  }
+
+  .result-title {
+    font-size: 1.1rem;
+    padding: 8px;
+  }
+
+  .result-style {
+    font-size: 0.9rem;
+  }
+
+  .simulation-delete-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-container {
+    margin: 5px;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .result-title {
+    font-size: 1rem;
+    padding: 6px;
+  }
+
+  .result-style {
+    font-size: 0.8rem;
+  }
+
+  .result-value {
+    font-size: 0.9rem;
+  }
+
+  .simulation-delete-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}

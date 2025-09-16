@@ -4,12 +4,6 @@
   align-items: center;
 }
 
-.profil-logo {
-  width: 35px;
-  height: auto;
-  color: black;
-}
-
 .user-groupe {
   display: flex;
   gap: 20px;
@@ -45,6 +39,7 @@
   border: none;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+  text-decoration: none;
 }
 
 .login-button {
@@ -62,4 +57,54 @@
 .header-button-groupe {
   display: flex;
   gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .header-component {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .user-groupe {
+    gap: 10px;
+  }
+
+  .header-button-groupe {
+    gap: 5px;
+  }
+
+  .signup-button,
+  .logout-button,
+  .my-space-button,
+  .login-button {
+    padding: 0 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-component {
+    padding: 5px;
+  }
+
+  .user-groupe {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header-button-groupe {
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .signup-button,
+  .my-space-button,
+  .login-button {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+  }
 }
