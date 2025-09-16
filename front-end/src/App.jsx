@@ -3,6 +3,7 @@ import AppRoutes from "./routes/Routes";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   useEffect(() => {
@@ -13,9 +14,11 @@ function App() {
   }, []);
   return (
     <div className="app">
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { LuTabletSmartphone } from "react-icons/lu";
 import Footer from "../../components/Footer";
 
-function Home() {
+function LogedHome() {
   return (
     <div>
       <Header />
@@ -23,7 +23,7 @@ function Home() {
             quelques clics avec notre simulateur intelligent
           </p>
           <div className="hero-button">
-            <Link to="/signup">
+            <Link to="/simulation">
               <button className="hero-cta">Commencer ma simulation</button>
             </Link>
           </div>
@@ -81,7 +81,7 @@ function Home() {
             Obtenez votre simulation personnalisée en moins de 2 minutes
           </p>
           <div className="cta-groupe-button">
-            <Link to="/singup">
+            <Link to="/simulation">
               <button className="cta-button">Simuler</button>
             </Link>
             <Link to="/header">
@@ -95,4 +95,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default LogedHome;

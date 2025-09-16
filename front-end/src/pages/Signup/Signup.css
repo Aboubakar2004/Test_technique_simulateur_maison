@@ -48,6 +48,7 @@
   border: none;
   cursor: pointer;
   width: 323px;
+  margin-top: 20px;
 }
 
 .sign-up-title {
@@ -62,4 +63,10 @@
 .password {
   display: grid;
   gap: 10px;
+}
+
+.have-account {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
