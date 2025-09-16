@@ -85,21 +85,6 @@
   color: white;
 }
 
-.cta-groupe-button {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.learn-more {
-  background-color: #449dd1;
-  padding: 15px;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  border: none;
-}
-
 .cta-hero {
   margin: 10rem 4.6rem;
   display: grid;
