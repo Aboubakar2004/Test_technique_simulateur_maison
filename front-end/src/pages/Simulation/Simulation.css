@@ -8,13 +8,11 @@
 }
 
 .simulation-form {
-  border: gray;
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
   align-items: center;
   padding: 20px;
-  border: white;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   justify-content: space-around;
   transition: transform 0.5s ease-in-out;
@@ -22,6 +20,7 @@
   display: grid;
   gap: 11px;
   background-color: white;
+  border-radius: 10px;
 }
 
 .simulation-form.slide-left {
@@ -159,4 +158,16 @@
   margin-top: 50px;
   display: grid;
   gap: 15px;
+}
+
+.save-button {
+  background-color: #88e788;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: center;
+  font-weight: bold;
 }
