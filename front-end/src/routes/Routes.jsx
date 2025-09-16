@@ -4,6 +4,7 @@ import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import Profil from "../pages/Profile/Profile";
 import Simulation from "../pages/Simulation/Simulation";
+import LogedHome from "../pages/LogedHome/LogedHome";
 
 function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ function AppRoutes() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/simulation" element={<Simulation />} />
+        <Route path="/loged-home" element={<LogedHome />} />
       </Routes>
     </div>
   );

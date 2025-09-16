@@ -45,10 +45,10 @@
   border-radius: 5px;
   color: white;
   text-decoration: none;
-
   border: none;
   cursor: pointer;
   width: 323px;
+  margin-top: 20px;
 }
 
 .login-title {
