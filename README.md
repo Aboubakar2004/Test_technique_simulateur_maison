@@ -17,10 +17,6 @@ cd back-end
 composer install
 cp .env.example .env
 php artisan key:generate
-# Windows PowerShell
-New-Item database/database.sqlite -ItemType File
-# Mac/Linux
-touch database/database.sqlite
 php artisan migrate
 php artisan serve
 ```
