@@ -14,7 +14,10 @@ Application web de simulation de prêts immobiliers avec interface moderne. Comp
 git clone <url-du-repo>
 cd test_technique
 docker-compose up -d
+
+# Dans le dossier back-end
 cp .env.example .env
+
 docker compose up --build
 ```
 
