@@ -39,6 +39,9 @@ RUN a2enmod rewrite
 # Copier les fichiers de l'application
 COPY . /var/www/html
 
+# Copier le fichier de configuration Docker depuis le répertoire parent
+COPY ../docker-mysql.env /var/www/html/docker-mysql.env
+
 # Installer les dépendances PHP
 RUN composer install --optimize-autoloader
 
