@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: small;
+  margin: 0 50px;
+  margin-top: 20px;
+  font-weight: lighter;
+
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}

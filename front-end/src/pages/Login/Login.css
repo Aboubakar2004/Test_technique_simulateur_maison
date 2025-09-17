@@ -1,3 +1,103 @@
-.connexion-title {
-  background-color: green;
+.login-page-container {
+  display: grid;
+  place-items: center;
+  height: 90vh;
+}
+
+.login-page-content {
+  background-color: white;
+  padding: 50px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.email {
+  display: grid;
+}
+
+.password {
+  display: grid;
+}
+
+.email-input {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #e5e7eb;
+  border-radius: 5px;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.1);
+}
+
+.password-input {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #e5e7eb;
+  border-radius: 5px;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.1);
+}
+
+.login-page-button {
+  background-color: #449dd1;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 323px;
+  margin-top: 20px;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.email {
+  display: grid;
+  gap: 10px;
+}
+
+.password {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .login-page-content {
+    width: 350px;
+    padding: 40px;
+  }
+
+  .email-input,
+  .password-input {
+    width: 250px;
+  }
+
+  .login-page-button {
+    width: 273px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page-content {
+    width: 300px;
+    padding: 30px;
+    margin: 20px;
+  }
+
+  .email-input,
+  .password-input {
+    width: 200px;
+  }
+
+  .login-page-button {
+    width: 223px;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+  }
 }
