@@ -21,7 +21,7 @@ php artisan key:generate --force
 
 # Exécuter les migrations
 echo "Exécution des migrations..."
-php artisan migrate:fresh --force
+php artisan migrate --force
 
 # Nettoyer le cache
 echo "Nettoyage du cache..."

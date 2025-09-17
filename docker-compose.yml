@@ -19,8 +19,8 @@ services:
 
   backend:
     build:
-      context: ./back-end
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./back-end/Dockerfile
     container_name: simulio_backend
     restart: unless-stopped
     ports:

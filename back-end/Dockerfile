@@ -31,16 +31,16 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 # Copier les fichiers de configuration Apache
-COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY back-end/docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Activer le module de réécriture Apache
 RUN a2enmod rewrite
 
 # Copier les fichiers de l'application
-COPY . /var/www/html
+COPY back-end/ /var/www/html
 
-# Copier le fichier de configuration Docker depuis le répertoire parent
-COPY ../docker-mysql.env /var/www/html/docker-mysql.env
+# Copier le fichier de configuration Docker
+COPY docker-mysql.env /var/www/html/docker-mysql.env
 
 # Installer les dépendances PHP
 RUN composer install --optimize-autoloader
@@ -54,7 +54,7 @@ RUN chown -R www-data:www-data /var/www/html \
 EXPOSE 80
 
 # Script de démarrage
-COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY back-end/docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

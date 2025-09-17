@@ -10,7 +10,7 @@ class SimulationResult extends Model
     use HasFactory;
 
     protected $table = 'simulation_results';
-    public $timestamps = false;
+    public $timestamps = true;
     public $incrementing = true;
     protected $keyType = 'int';
 
