@@ -59,6 +59,17 @@ services:
     networks:
       - simulio_network
 
+  python-api:
+    build:
+      context: ./back-end/python-api
+      dockerfile: Dockerfile
+    container_name: simulio_python_api
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    networks:
+      - simulio_network
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: simulio_phpmyadmin
