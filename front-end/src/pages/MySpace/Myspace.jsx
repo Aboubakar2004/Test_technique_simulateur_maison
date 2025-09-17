@@ -9,7 +9,6 @@ const MySpace = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [deleting, setDeleting] = useState(null);
-
   useEffect(() => {
     fetchSimulations();
   }, []);
@@ -62,16 +61,6 @@ const MySpace = () => {
     }).format(amount);
   };
 
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString("fr-FR", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
-
   if (loading) {
     return (
       <div>
@@ -93,12 +82,9 @@ const MySpace = () => {
         </div>
       ) : (
         <div>
-          {simulations.map((simulation) => (
+          {simulations.map((simulation, index) => (
             <div key={simulation.id} className="result-container">
-              <h2 className="result-title">
-                Date de la simulation:
-                {formatDate(simulation.created_at)}
-              </h2>
+              <h2 className="result-title">Simulation {index + 1}</h2>
               <p className="result-style">
                 Capacité d'emprunt:
                 <span className="result-value">

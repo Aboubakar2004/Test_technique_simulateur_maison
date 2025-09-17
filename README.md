@@ -2,30 +2,96 @@
 
 Application web de simulation de prêts immobiliers avec interface moderne. Comprend un frontend React, un backend Laravel et une API Python pour les calculs financiers.
 
-## Technologies
+## Démarrage rapide
 
-- **Frontend** : React 19, Vite, CSS3
-- **Backend** : Laravel 12, PHP 8.2, SQLite
-- **API Python** : Flask, Pandas, NumPy
+### Prérequis
 
-## Installation
+- Docker et Docker Compose installés
 
-### 1. Backend Laravel
+### Installation
+
+```bash
+git clone <url-du-repo>
+cd test_technique
+docker-compose up -d
+```
+
+### Accès
+
+- Frontend : http://localhost:5173
+- Backend API : http://localhost:8000
+- phpMyAdmin : http://localhost:8080
+- MySQL (clients externes) : localhost:3308
+
+## Commandes utiles
+
+```bash
+# Lancer avec reconstruction
+docker-compose up --build -d
+
+# Voir les logs
+docker-compose logs
+
+# Arrêter l'application
+docker-compose down
+```
+
+## Architecture
+
+### Services
+
+- MySQL : Base de données (port 3308)
+- Backend Laravel : API REST (port 8000)
+- Frontend React : Interface utilisateur (port 5173)
+- API Python : Calculs financiers (port 5001)
+
+### Technologies
+
+- Frontend : React 19, Vite
+- Backend : Laravel 12, PHP 8.2, MySQL
+- API Python : Flask, Pandas, NumPy
+
+## Fonctionnalités
+
+- Authentification utilisateur
+- Simulation de prêts immobiliers
+- Sauvegarde des simulations
+- Interface responsive
+
+## Dépannage
+
+### Port déjà utilisé
+
+```bash
+netstat -an | findstr ":5173\|:8000\|:3308\|:5001"
+```
+
+### Conteneurs qui ne démarrent pas
+
+```bash
+docker-compose logs [service_name]
+```
+
+### Base de données non accessible
+
+```bash
+docker exec simulio_mysql mysql -u simulio_user -p simulio_db
+```
+
+## Installation manuelle (sans Docker)
+
+### Backend Laravel
 
 ```bash
 cd back-end
 composer install
-cp .env.example .env
+cp docker-mysql.env .env
 php artisan key:generate
-# Windows PowerShell
-New-Item database/database.sqlite -ItemType File
-# Mac/Linux
-touch database/database.sqlite
 php artisan migrate
 php artisan serve
 ```
 
-### 2. API Python
+### API Python
 
 ```bash
 cd back-end/python-api
@@ -33,23 +99,10 @@ pip install flask flask-cors pandas numpy numpy-financial
 python app.py
 ```
 
-### 3. Frontend React
+### Frontend React
 
 ```bash
 cd front-end
 npm install
 npm run dev
 ```
-
-## Accès
-
-- **Frontend** : http://localhost:5173
-- **Backend** : http://localhost:8000
-- **API Python** : http://localhost:5001
-
-## Fonctionnalités
-
-- Simulation de prêt immobilier
-- Authentification utilisateur
-- Sauvegarde des simulations
-- Historique personnel

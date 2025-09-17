@@ -21,8 +21,8 @@ return new class extends Migration
             $table->decimal('estimated_monthly_payment', 10, 2)->nullable();
             $table->timestamps();
 
-            // Clé étrangère vers la table users (Laravel standard)
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // Clé étrangère vers la table app_users
+            $table->foreign('user_id')->references('id')->on('app_users')->onDelete('cascade');
         });
     }
 
